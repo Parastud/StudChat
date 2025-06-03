@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudChat</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="WhatsApp_Image_2024-02-17_at_10.17.30_35deb41f-removebg-preview (1).png" type="image/icon type">
+</head>
+
+<body>
+    <div class="background"></div>
+    <div class="main">
+        <div id="blur">
+            <img src="Flag_of_India.svg.webp" width="30px" id="india">
+            <div class="logo">
+                <img src="Capture-removebg-preview.png" alt="Not Found" id="logo">
+            </div>
+            <div class="Weltext">
+                <p>Welcome to our secure chat haven</p>
+            </div>
+            <div class="desp">
+                <p>Experience secure and private conversations with end-to-end encryption, ensuring that your messages
+                    remain confidential in our chat room.</p>
+            </div>
+            <div class="but">
+                <button class="glow-on-hover" type="button" onclick="openCard()" id="chat">Start Chatting</button>
+            </div>
+        </div>
+        <div class="card-container" id="card">
+            <div class="room test front">
+                <input type="text" id="room" maxlength="5" pattern="[A-Z]{5}" style="text-transform: uppercase;"
+                    oninput="checkInput1()" required>
+                <label for="room">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    Room</label>
+                <br>
+                <p id="alert" style="visibility: hidden;">Room does not exist.</p>
+                <p id="alert1" style="visibility: hidden;">Please enter a valid room code</p>
+                <button onclick="enterRoom()" id="butt2" class="nextroom disabled" disabled>Next</button>
+                <br>
+                <br>
+                <br>
+                <button onclick="backroom()" id="back">back</button>
+            </div>
+            <div id="user" class="test back">
+                <input type="text" id="usernameinp" oninput="checkInput()" required>
+                <label for="usernameinp">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    Username</label>
+                <br>
+                <br>
+                <br>
+                
+                <button onclick="createRoom()" id="butt" class="nextroom disabled" disabled>Create Room</button>
+                <button onclick="joinRoom()" id="butt1" class="nextroom disabled" disabled>Join Room</button>
+                <br><br>
+                <br>
+                <button onclick="closeCard()"  id="back">Back</button>
+            </div>
+        </div>
+    </div>
+  <div class="msgmain">
+    <button onclick="refreshPage()" id="ref">Home</button>
+    <div class="menu">
+        <div class="name" id="chatid">
+            <span align="center"></span> &nbsp;
+            <button id="copyButton" onclick="copyText()">
+                <span class="clipboard">📋Copy Roomcode</span>
+                <span class="checkmark">✅Roomcode Copied</span>
+            </button>
+            <!-- <button onclick="down()" id="copyButton">Download Chats</button> -->
+        </div>
+    </div>
+    <div class="scroll custom-scrollbar">
+    <ul class="chat" id="messages">
+    </ul>
+    <div id="contextMenu">
+        <button id="addToFav">Add Reminder</button>
+        <input type="datetime-local" id="para">
+        <br>
+    </div>
+    <!-- <div class="imp">
+        <h1>Important Messages</h1>
+        <div id="imp">
+            <ul id="list" type="none" class="chat">
+            </ul>
+        </div>
+    </div> -->
+</div>
+    <div class="typezone">
+        <textarea type="text" id="messageInput" placeholder="Say something"></textarea>
+        <input type="submit" onclick="sendMessage()" class="send" value=""/>
+    </div>
+</div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
