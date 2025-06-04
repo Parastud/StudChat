@@ -29,7 +29,7 @@ setInterval(() => {
 
 var username;
 var room;
-const socket = io("https://cdn.socket.io/4.7.4/socket.io.min.js");
+const socket = io();
 
 function openCard() {
   var card = document.getElementById('card');
