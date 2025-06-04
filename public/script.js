@@ -29,7 +29,7 @@ setInterval(() => {
 
 var username;
 var room;
-const socket = io();
+const socket = io(`${window.location.hostname}:${window.location.port}`);
 
 function openCard() {
   var card = document.getElementById('card');
