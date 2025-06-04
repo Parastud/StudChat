@@ -13,8 +13,8 @@ const io = socketIO(server, {
   }
 });
 let user = 0;
-app.use(express.static('public'));
 app.use(cors());
+app.use(express.static('public'));
 const activeRooms = new Map();
 
 io.use(async (socket, next) => {
