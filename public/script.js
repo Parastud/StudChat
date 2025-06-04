@@ -29,10 +29,7 @@ setInterval(() => {
 
 var username;
 var room;
-const socket = io(process.env.NODE_ENV === 'production' 
-  ? 'https://studchat-mu.vercel.app'
-  : window.location.origin
-);
+const socket = io("https://studchat-parastuds-projects.vercel.app");
 
 function openCard() {
   var card = document.getElementById('card');
