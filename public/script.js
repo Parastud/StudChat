@@ -10,9 +10,9 @@ function scrollToBottom() {
 
 scrollContainer.addEventListener('scroll', function () {
   const isUserAtBottom =
-    scrollContainer.scrollHeight - scrollContainer.clientHeight <=
-    scrollContainer.scrollTop + 1;
-
+  scrollContainer.scrollHeight - scrollContainer.clientHeight <=
+  scrollContainer.scrollTop + 1;
+  
   if (isUserAtBottom) {
     isAutoScrolling = true;
   } else {
@@ -29,7 +29,7 @@ setInterval(() => {
 
 var username;
 var room;
-const socket = io(`${window.location.hostname}:${window.location.port}`);
+const socket = io(window.location.origin);
 
 function openCard() {
   var card = document.getElementById('card');
