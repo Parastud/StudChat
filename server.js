@@ -5,7 +5,13 @@ const axios = require('axios');
 const cors = require('cors');
 const app = express();
 const server = http.createServer(app);
-const io = socketIO(server);
+const io = socketIO(server, {
+  cors: {
+    origin: "*",
+    methods: ["GET", "POST"],
+    credentials: true
+  }
+});
 let user = 0;
 app.use(express.static('public'));
 app.use(cors());
@@ -107,7 +113,7 @@ function generateRandomRoom() {
 }
 
 const PORT = process.env.PORT || 3000;
-const HOST = process.env.HOST || 'localhost';
+const HOST = process.env.HOST || '0.0.0.0';
 
 server.listen(PORT, HOST, () => {
   console.log(`Server is running on http://${HOST}:${PORT}`);
