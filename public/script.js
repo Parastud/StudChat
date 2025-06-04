@@ -29,7 +29,7 @@ setInterval(() => {
 
 var username;
 var room;
-const socket = io("https://studchat-parastuds-projects.vercel.app");
+const socket = io("https://cdn.socket.io/4.7.4/socket.io.min.js");
 
 function openCard() {
   var card = document.getElementById('card');
